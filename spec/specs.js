@@ -1,8 +1,11 @@
-describe ("divisibleByThree", function () {
+describe ("divisibleBy", function () {
   it("will determine if the number divisible by three", function() {
-    expect(divisibleByThree(9)).to.equal(true);
+    expect(divisibleBy(9)).to.equal(true);
   });
   it("will determine if the number is divisible by five", function() {
-    expect(divisibleByFive(15)).to.equal(true);
+    expect(divisibleBy(15)).to.equal(true);
+  });
+  it("will determine if the number is divisible by three and five", function() {
+    expect(divisibleBy(30)).to.equal(true);
   });
 });
