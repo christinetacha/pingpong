@@ -1,5 +1,5 @@
-describe('pingPong', function() {
-  it("will count by ones", function() {
-    expect(pingPong(1)).to.eql(1);
+describe ("divisibleByThree", function () {
+  it("it is divisible by three", function() {
+    expect(divisibleByThree(9)).to.equal(true);
   });
 });
