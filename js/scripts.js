@@ -9,3 +9,11 @@ var divisibleBy = function(number) {
     return number;
   }
 };
+
+var looptyLoo = function(number) {
+  var arrayOne = [];
+  for (var i = 1; i <= number; i++) {
+    arrayOne.push(divisibleBy(i));
+  }
+    return arrayOne;
+};
