@@ -17,16 +17,3 @@ var looptyLoo = function(number) {
   }
     return arrayOne;
 };
-
-$(document).ready(function(){
-  $("form#pingPong").submit(function(event) {
-    $("ul").empty();
-    var userInput = parseInt($("input#userInput").val());
-    var numberList = pingPong(userInput);
-
-    for (var i = 0; i < numberList.length; i++ ) {
-        $(".numberList").append("<li>" + numberList[i] + "</li>")
-    };
-    event.preventDefault();
-  });
-});
