@@ -19,7 +19,20 @@ var looptyLoo = function(number) {
 };
 
 $(document).ready(function() {
-    $("form#pingPong").submit(function(event) {
-      $(".result").show();
-    });
+  $("form#pingPong").submit(function(event) {
+    var numberToCountTo = parseInt($("input#userInput").val());
+    var countArray = looptyLoo(numberToCountTo);
+    $(".result").append(countArray);
+    event.preventDefault();
   });
+});
+
+
+
+// $(document).ready(function() {
+//     $("form#pingPong").submit(function(event) {
+//       var userInput = parseInt($("input#userInput").val());
+//       looptyLoo(userInput);
+//       event.preventDefault();
+//     });
+//   });
