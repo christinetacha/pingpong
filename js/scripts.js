@@ -1,28 +1,27 @@
 var divisibleBy = function(number) {
-  if (number % 3 === 0 && number % 5 == 0) {
-    return "pingpong";
-  } else if (number % 5 === 0) {
-    return "pong";
-  } else if (number % 3 === 0) {
-    return "ping";
-  } else {
-    return number;
-  }
-};
-
-var looptyLoo = function(number) {
   var divisibleResult = [];
   for (var i = 1; i <= number; i++) {
-    divisibleResult.push(divisibleBy(i));
+    if (i% 3 === 0 && i % 5 == 0) {
+      divisibleResult.push("pingpong");
+    } else if (i % 5 === 0) {
+      divisibleResult.push("pong");
+    } else if (i % 3 === 0) {
+      divisibleResult.push("ping");
+    } else {
+      divisibleResult.push(i);
+    }
   }
-    return divisibleResult;
+  return divisibleResult;
 };
 
 $(document).ready(function() {
   $("form#pingPong").submit(function(event) {
+    $(".numberList").empty();
     var numberToCountTo = parseInt($("input#userInput").val());
-    var countArray = looptyLoo(numberToCountTo);
-    $(".result").append(countArray);
+    var countArray = divisibleBy(numberToCountTo);
+    for (var i = 0; i < countArray.length; i++) {
+      $(".numberList").append("<li>" + countArray[i] + "</li>");
+    }
     event.preventDefault();
   });
 });
